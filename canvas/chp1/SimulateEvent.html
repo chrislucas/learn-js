@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SimulateClick</title>
+</head>
+<body>
+
+
+
+	<script type="text/javascript" charset="utf-8">
+		/*
+			http://davestewart.io/resources/javascript/deconstructed/jquery/
+			https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+		*/
+		var f = function() {
+			var evt = document.createEvent();
+			// https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/initMouseEvent
+			evt.initMouseEvent('click', true, true, window, 1, 12, 345, 7, 220, false, false, true, false, 0, null);
+			var el = document.getElementsByClassName('view-go');
+
+			//https://developer.mozilla.org/pt-BR/docs/Web/API/EventTarget/dispatchEvent
+			el.dispatchEvent(evt);
+		};
+	</script>
+
+</body>
+</html>
