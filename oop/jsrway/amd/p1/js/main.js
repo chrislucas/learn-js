@@ -7,7 +7,7 @@ require.config({
 
 
 
-require(['math/trigonometry', 'math/geom'], function(t, g) {
+require(['math/lib-trigonometry', 'math/geom'], function(t, g) {
 	var trigonometry = new Trigonometry();
 	console.log(trigonometry.sin(45));
 	console.log(trigonometry.cos(45));
