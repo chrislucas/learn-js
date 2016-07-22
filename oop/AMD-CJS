@@ -29,3 +29,24 @@ http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html
 
 
 http://www.devmedia.com.br/padronizacao-com-iife-amd-e-requirejs/31031
+
+
+Uso da propriedade shim no requirejs
+https://www.exoplatform.com/docs/public/index.jsp?topic=%2FPLF43%2FPLFDevGuide.JavaScript.Shim_and_NonAMD.html
+
+Tutorial requirejs
+https://www.devbridge.com/articles/understanding-amd-requirejs/
+named module
+http://stackoverflow.com/questions/26735062/module-naming-in-requirejs
+http://stackoverflow.com/questions/19720646/named-module-vs-unnamed-module-in-requirejs
+
+
+PLugin tree
+https://mbraak.github.io/jqTree/
+
+
+http://skilldrick.co.uk/2011/09/understanding-typeof-instanceof-and-constructor-in-javascript/
+
+
+blog interessante
+http://blog.da2k.com.br/
