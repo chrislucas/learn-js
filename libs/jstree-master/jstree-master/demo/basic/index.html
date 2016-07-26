@@ -65,20 +65,22 @@
 	// data format demo
 	$('#frmt').jstree({
 		'core' : {
-			'data' : [
-				{
-					"text" : "Root node",
-					"state" : { "opened" : true },
-					"children" : [
-						{
-							"text" : "Child node 1",
-							"state" : { "selected" : true },
-							"icon" : "jstree-file"
-						},
-						{ "text" : "Child node 2", "state" : { "disabled" : true } }
-					]
-				}
-			]
+
+			'data' :
+				[
+					{
+						"text" : "Root node"
+						,"state" : { "opened" : true }
+						,"children" : [
+							{
+								"text" : "Child node 1",
+								"state" : { "selected" : true },
+								"icon" : "jstree-file"
+							},
+							{ "text" : "Child node 2", "state" : { "disabled" : true } }
+						]
+					}
+				]
 		}
 	});
 
@@ -124,20 +126,61 @@
 		instance.deselect_all();
 		instance.select_node('1');
 	});
+	
 	$('#evts')
 		.on("changed.jstree", function (e, data) {
+			
+			var tree = data.instance._model.data;
+			console.dir(tree);
 			if(data.selected.length) {
-				alert('The selected node is: ' + data.instance.get_node(data.selected[0]).text);
+				//alert('The selected node is: ' + data.instance.get_node(data.selected[0]).text);
 			}
 		})
 		.jstree({
 			'core' : {
 				'multiple' : false,
 				'data' : [
-					{ "text" : "Root node", "children" : [
-							{ "text" : "Child node 1", "id" : 1 },
-							{ "text" : "Child node 2" }
-					]}
+					{
+						'text': 'Principal'
+						,'id':1
+						,'children': [
+							{ 	
+								 "text" : "Limpeza"
+								,"id": 2
+								,"children" : [
+									 {
+									 	"text" : "Composicao Terraplanagem", "id" : 3
+									 }
+									
+									,{
+										"text" : "Composicao limpeza do canteiro" 
+										,"id" : 4
+										,children: []
+									}
+
+									,{
+										"text" : "Composicao construcao do alicerce" 
+										,"id" : 5
+										,children: []
+									}
+								]
+							}
+							,{ 	
+								 "text" : "Mobilizacao canteiro de obra"
+								,"id": 6
+								,"children" : [
+									 {
+									 	"text": "Composicao movimentacao de equipe"
+									 	,"id" : 7
+									 }
+									,{
+										"text":"Composicao movimentacao de pessoas"
+										,"id" :8
+									}
+								]
+							}
+						]
+					}
 				]
 			}
 		});

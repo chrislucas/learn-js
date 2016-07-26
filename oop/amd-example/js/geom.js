@@ -1,4 +1,4 @@
-define(['lib-trigonometry'], function(t) {
+define(['lib-trigonometry'], function(trigonometry) {
 	return {
 		testImports: function() {
 			return [trigonometry];
