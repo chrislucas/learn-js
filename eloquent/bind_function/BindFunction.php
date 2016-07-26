@@ -29,6 +29,7 @@
 	 		var run2 = function() {
 
 	 			Clazz.prototype.timer = function(argument) {
+	 				console.log(this);
 	 				var f1 = this.methodA.bind(this);
 	 				var f2 = this.methodA;
 
