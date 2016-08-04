@@ -7,7 +7,7 @@ http://stackoverflow.com/questions/33723298/datatables-trying-to-access-datatabl
 require.config({
 	 baseUrl: ''
 	//,waitSeconds: 15,
-    ,urlArgs : "bust="+new Date().getTime()
+    ,urlArgs : "bust="+(new Date()).getTime()
 	,paths: {
 		 'jquery': '../../libs/datatables/jquery/jquery.min'
 	 	,'bootstrap': '//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min'
