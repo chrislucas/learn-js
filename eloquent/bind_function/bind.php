@@ -18,10 +18,12 @@
 	 		};
 
 	 		var run = function() {
-		 		var list = List(1,2,3);
-	 			console.log(list);
-	 			default_list = List.bind(undefined, [1000, 100, 10]);
-	 			console.log(default_list(1,2,3));
+	 			// retorna uma lista com o elementos passador por argumento
+		 		var myList = List(1,2,3, [10,20,30]);
+		 		console.log(myList);
+
+	 			var default_list = List.bind(undefined, [1000, 100, 10]);
+	 			console.log(default_list, default_list(1,2,3));
 	 		};
 
 			function Clazz() {}
@@ -52,10 +54,10 @@
 	 		};
 
 	 		//run();
-	 		run2();
+	 		//run2();
 	 		//window.onload = run;
 
-
 	 </script>
+	 <script src="study-bind-function.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
 </html>
