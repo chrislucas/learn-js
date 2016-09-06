@@ -15,9 +15,12 @@ var obj = {
 	}
 	,attr: 1
 };
-
-
-console.log(obj.hasOwnProperty('attr'));		// vai dizer que nao tem essa propriedade porque hasOwnProperty retorna false \o/
+/*
+ 	vai dizer que nao tem essa propriedade
+ 	porque o metodo hasOwnProperty do objecto 'obj'
+ 	foi reescrito e agora retorna false \o/
+*/
+console.log(obj.hasOwnProperty('attr'));
 
 // solucao: usar 'hasOwnProperty' de outro objeto
 // e com a funcao call(this, thirArs), mudar o valor de 'this' para 'var obj'

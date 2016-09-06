@@ -1,6 +1,7 @@
 /**
 	links
 	https://developer.chrome.com/apps/app_codelab_intro
+	http://imasters.com.br/desenvolvimento/chrome-extension-push-browser-com-onesignal/?platform=hootsuite
 */
 
 chrome.app.runtime.onLaunched.addListener(function(){
