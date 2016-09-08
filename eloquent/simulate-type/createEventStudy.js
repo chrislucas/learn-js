@@ -26,6 +26,12 @@ https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent#initKeyboardEvent
 	http://stackoverflow.com/questions/10455626/keydown-simulation-in-chrome-fires-normally-but-not-the-correct-key/12522769#12522769
 	http://stackoverflow.com/questions/1897333/firing-a-keyboard-event-on-chrome
 	https://gist.github.com/callmephilip/3519403
+
+	http://teletype.rocks/
+
+	Interessate post
+	http://stackoverflow.com/questions/13987380/how-to-to-initialize-keyboard-event-with-given-char-keycode-in-a-chrome-extensio
+	http://stackoverflow.com/questions/9515704/building-a-chrome-extension-inject-code-in-a-page-using-a-content-script/9517879#9517879
 */
 
 var chars = [' '];
@@ -48,7 +54,7 @@ var simulateKeyBoardEvent = function(event, k, c) {
 	var keyboardEvent = document.createEvent('KeyboardEvent');
 
 	var codeUpperCase = k.toUpperCase(k).charCodeAt(0);
-	console.log(codeUpperCase, String.fromCharCode(codeUpperCase));
+	//console.log(codeUpperCase, String.fromCharCode(codeUpperCase));
 
     Object.defineProperty(keyboardEvent, 'keyCode', {
     	get: function() {
@@ -67,27 +73,50 @@ var simulateKeyBoardEvent = function(event, k, c) {
     		return k;
     	}
     });
+/*
+    Object.defineProperty(keyboardEvent, 'isTrusted', {
+    	get: function() {
+    		return true;
+    	}
+    });
+*/
+    // como estou tentado simular somente letras
+    /*
+    Object.defineProperty(keyboardEvent, 'code', {
+    	get: function() {
+    		return 'Key' + k.toUpperCase(k);
+    	}
+    });
+    */
 
     //console.dir(document.defaultView === window);
     //console.log(keyboardEvent['initKeyboardEvent'].arguments);
 
+    /*
+            // type          'keypress',
+            // bubbles       true,
+            // cancelable    false,
+            // view          window,
+            // keyIdentifier '',
+            // keyLocation   0,
+            // ctrlKey       false,
+            // altKey        false,
+            // shiftKey      false,
+            // metaKey       false,
+            // altGraphKey   false
+    */
+
     if(keyboardEvent['initKeyboardEvent'])  {
     	keyboardEvent['initKeyboardEvent'](
            event
-           ,false
+           ,true
            ,false
            ,document.defaultView
-           /*
-           ,false
-           ,false
-           ,false
-           ,false
-           */
            ,k
            ,c
-           , true // [test]in boolean ctrlKeyArg | webkit event.shiftKey | old webkit event.ctrlKey | IE9 event.modifiersList
+           , false // [test]in boolean ctrlKeyArg | webkit event.shiftKey | old webkit event.ctrlKey | IE9 event.modifiersList
            , false // [test]shift | alt
-           , true // [test]shift | alt
+           , false // [test]shift | alt
            , false // meta
            , false // altGraphKey
         );
@@ -112,7 +141,7 @@ var simulateKeyBoardEvent = function(event, k, c) {
     //keyboardEvent.key = k;
 
 
-    if(keyboardEvent.keyCodeVal !== c) {
+    if(keyboardEvent.keyCodeVal !== codeUpperCase) {
     	console.log('error %s %s', keyboardEvent.keyCode, keyboardEvent.which);
     }
 
@@ -149,20 +178,26 @@ var fire = function(element, typeEvent) {
 	// [keypress, keydown]
 	var event 	= simulateKeyBoardEvent(typeEvent, char, code);
 	var c = element.dispatchEvent(event);
-	//console.log(element.dispatchEvent);
+	element.value = char;
 	//console.dir(event);
 };
+
+var addEvent = function(element, typeEvent) {
+	if(element !== undefined) {
+		element.addEventListener(typeEvent, function(evt){
+			console.log(evt);
+		});
+		fire(element, typeEvent);
+		//setInterval(fire, 3000, text, typeEvt);
+	}
+}
 
 window.onload = function() {
 	initChars();
 	console.log(chars);
-	var text = document.getElementById('textarea');
-	if(text !== undefined) {
-		var typeEvt = 'keydown';
-		text.addEventListener(typeEvt, function(evt){
-			console.log(evt);
-		});
-		fire(text, typeEvt);
-		//setInterval(fire, 3000, text, typeEvt);
-	}
+	var text 	  = document.getElementById('text');
+	var textarea  = document.getElementById('textarea');
+	var typeEvent = 'keydown';
+	addEvent(text, typeEvent);
+	addEvent(textarea, typeEvent);
 };
