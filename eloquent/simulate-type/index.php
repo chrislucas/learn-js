@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="simulate.js" charset="utf-8" async defer></script>
 	-->
 
-	<script type="text/javascript" src="createEventStudy.js" charset="utf-8" async defer></script>
+	<script type="text/javascript" src="allin.js" charset="utf-8" async defer></script>
 
 </body>
 </html>

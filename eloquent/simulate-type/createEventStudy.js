@@ -1,3 +1,4 @@
+'use strict';
 /*
 KeyboardEvent
 https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent#initKeyboardEvent%28%29
@@ -44,8 +45,8 @@ var initChars = function() {
 
 var randomChar = function() {
 	var sz = chars.length;
-	min = 0;
-	max = sz;
+	var min = 0;
+	var max = sz;
 	var idx = Math.floor(Math.random() * (max - min + 1)) + min;
 	return chars[idx];
 };
@@ -190,7 +191,7 @@ var addEvent = function(element, typeEvent) {
 		fire(element, typeEvent);
 		//setInterval(fire, 3000, text, typeEvt);
 	}
-}
+};
 
 window.onload = function() {
 	initChars();
