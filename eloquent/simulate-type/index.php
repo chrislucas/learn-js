@@ -6,6 +6,13 @@
 </head>
 <body>
 	<textarea name="text" id="textarea" style="width: 50%; height:300px; resize:none;"></textarea>
-	<script type="text/javascript" src="createEventStudy.js" charset="utf-8" async defer></script>
+	<input type="text" id="text" />
+	<script src="../../libs/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8" async defer></script>
+	<!--
+	<script type="text/javascript" src="simulate.js" charset="utf-8" async defer></script>
+	-->
+
+	<script type="text/javascript" src="allin.js" charset="utf-8" async defer></script>
+
 </body>
 </html>
