@@ -15,6 +15,7 @@ Veja se da para tirar algo
 http://jsfiddle.net/termi/yjc5F/
 http://stackoverflow.com/questions/961532/firing-a-keyboard-event-in-javascript
 
+http://stackoverflow.com/questions/33162882/jquery-javascript-code-to-simulate-key-typing-in-a-text-field-in-google-chrome-c
 */
 jQuery(document).ready(function($) {
 	(function() {
