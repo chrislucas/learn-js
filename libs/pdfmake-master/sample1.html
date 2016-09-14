@@ -6,7 +6,233 @@
 <title>pdfmake Simple Example</title>
 </head>
 <body>
+<table class="table table-hover data-table table-row-link" width="100%">
+		<thead>
+			<tr>
+				<th>Descrição</th>
+				<th>Valor Total</th>
+				<th>Mês 1</th><th>Mês 2</th><th>Mês 3</th><th>Mês 4</th><th>Mês 5</th><th>Mês 6</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr><td rowspan="3">Fase limpeza</td><td rowspan="3">R$ 18.188,17</td><td>9.00</td><td>14.00</td><td>12.00</td><td>14.00</td><td>9.00</td><td>41.00</td></tr><tr><td>R$ 1.636,93</td><td>R$ 2.546,34</td><td>R$ 2.182,58</td><td>R$ 2.546,34</td><td>R$ 1.636,93</td><td>R$ 7.457,14</td></tr><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td rowspan="3">CAMINHÃO PARA EQUIPAMENTO DE LIMPEZA A SUCÇÃO COM CAMINHÃO TRUCADO DE PESO BRUTO TOTAL</td><td rowspan="3">R$ 18,17</td><td>9.00</td><td>14.00</td><td>12.00</td><td>14.00</td><td>9.00</td><td>41.00</td></tr><tr><td>R$ 1,63</td><td>R$ 2,54</td><td>R$ 2,18</td><td>R$ 2,54</td><td>R$ 1,63</td><td>R$ 7,44</td></tr><tr><td>0,09</td><td>0,14</td><td>0,12</td><td>0,14</td><td>0,09</td><td>0,41</td></tr><tr><td rowspan="3">CAMINHÃO PARA EQUIPAMENTO DE LIMPEZA A SUCÇÃO COM CAMINHÃO TRUCADO DE PESO BRUTO TOTAL</td><td rowspan="3">R$ 18.170,00</td><td>9.00</td><td>14.00</td><td>12.00</td><td>14.00</td><td>9.00</td><td>41.00</td></tr><tr><td>R$ 1.635,30</td><td>R$ 2.543,80</td><td>R$ 2.180,40</td><td>R$ 2.543,80</td><td>R$ 1.635,30</td><td>R$ 7.449,70</td></tr><tr><td>90,00</td><td>140,00</td><td>120,00</td><td>140,00</td><td>90,00</td><td>410,00</td></tr><tr><td rowspan="3">Fase manunteção</td><td rowspan="3">R$ 1.817.000,00</td><td>9.00</td><td>14.00</td><td>12.00</td><td>14.00</td><td>9.00</td><td>41.00</td></tr><tr><td>R$ 163.530,00</td><td>R$ 254.380,03</td><td>R$ 218.040,00</td><td>R$ 254.380,03</td><td>R$ 163.530,00</td><td>R$ 744.970,00</td></tr><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td rowspan="3">CAMINHÃO PARA EQUIPAMENTO DE LIMPEZA A SUCÇÃO COM CAMINHÃO TRUCADO DE PESO BRUTO TOTAL</td><td rowspan="3">R$ 1.817.000,00</td><td>9.00</td><td>14.00</td><td>12.00</td><td>14.00</td><td>9.00</td><td>41.00</td></tr><tr><td>R$ 163.530,00</td><td>R$ 254.380,03</td><td>R$ 218.040,00</td><td>R$ 254.380,03</td><td>R$ 163.530,00</td><td>R$ 744.970,00</td></tr><tr><td>9000,00</td><td>14000,02</td><td>12000,00</td><td>14000,02</td><td>9000,00</td><td>41000,00</td></tr><tr><td rowspan="3">Sub fase limpeza</td><td rowspan="3">R$ 0,00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>25.00</td></tr><tr><td>R$ 0,00</td><td>R$ 0,00</td><td>R$ 0,00</td><td>R$ 0,00</td><td>R$ 0,00</td><td>R$ 0,00</td></tr><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+		</tbody>
+	</table>
 
+	<script type="text/javascript">
+		/*
+
+		*/
+	var fake = [
+		[
+			 {text: 'Header with Colspan = 2', style: 'tableHeader', colSpan: 2, alignment: 'center' }
+			,{}
+			,{ text: 'Header 3', style: 'tableHeader', alignment: 'center' }
+		],
+		[
+			 { text: 'Header 1', style: 'tableHeader', alignment: 'center' }
+			,{ text: 'Header 2', style: 'tableHeader', alignment: 'center' }
+			,{ text: 'Header 3', style: 'tableHeader', alignment: 'center' }
+		],
+		[ 
+			'Sample value 1'
+			,'Sample value 2'
+			,'Sample value 3'
+		],
+		[
+			{
+				 rowSpan: 3
+				,text: 'rowSpan set to 3\nLorem ipsum dolor sit amet, consectetur' + 
+				'adipisicing elit, sed do eiusmod tempor' 
+			}
+			, 'Sample value 2', 'Sample value 3'
+		],
+		[
+			''
+			,'Sample value 2'
+			,'Sample value 3'
+		],
+		[
+			//'Sample value 1'
+			''
+			,'Sample value 2'
+			,'Sample value 3'
+		],
+
+		[
+			'Sample value 1'
+			,{ colSpan: 2, rowSpan: 2, text: 'Both:\nrowSpan and colSpan\ncan be defined at the same time' }
+			,''
+		],
+		[
+			'Sample value 1'
+			,''
+			,''
+		],
+		
+	];
+
+/*
+,{
+	 style: 'tableExample'
+	,color: '#444'
+	,table: {
+		 widths: [360, 'auto', 'auto']
+		,headerRows: 2
+		,keepWithHeaderRows: 1
+		,body: fake
+	}
+}
+*/
+/*
+	{
+	  table: {
+		// headers are automatically repeated if the table spans over multiple pages
+		// you can declare how many rows should be treated as headers
+		headerRows: 1,
+		// essa merda de vetor diz quais as larguras
+		//widths: ['*', 'auto', 100, '*'],
+
+		body: [
+		  [ 'First', 'Second', 'Third', 'The last one' ],
+		  [ 'Value 1', 'Value 2', 'Value 3', 'Value 4' ],
+		  [ { text: 'Bold value', bold: true }, 'Val 2', 'Val 3', 'Val 4' ]
+		]
+	  }
+	}
+
+	//{text: 'Column/row spans', style: 'subheader' }
+	//,'Each cell-element can set a rowSpan or colSpan'
+	
+	,{
+		style: 'tableExample',
+		color: '#444',
+		table: {
+			widths: [360, 'auto', 'auto'],
+			headerRows: 2,
+			// keepWithHeaderRows: 1,
+			body: [
+				[
+					 {text: 'Header with Colspan = 2', style: 'tableHeader', colSpan: 2, alignment: 'center' }
+					,{}
+					,{ text: 'Header 3', style: 'tableHeader', alignment: 'center' }
+				],
+				[
+					 { text: 'Header 1', style: 'tableHeader', alignment: 'center' }
+					,{ text: 'Header 2', style: 'tableHeader', alignment: 'center' }
+					,{ text: 'Header 3', style: 'tableHeader', alignment: 'center' }
+				],
+				[ 
+					'Sample value 1'
+					,'Sample value 2'
+					,'Sample value 3'
+				],
+				[
+					{
+						 rowSpan: 3
+						,text: 'rowSpan set to 3\nLorem ipsum dolor sit amet, consectetur' + 
+						'adipisicing elit, sed do eiusmod tempor' 
+					}
+					, 'Sample value 2', 'Sample value 3'
+				],
+				[
+					''
+					,'Sample value 2'
+					,'Sample value 3'
+				],
+				[
+					//'Sample value 1'
+					''
+					,'Sample value 2'
+					,'Sample value 3'
+				],
+
+				[
+					'Sample value 1'
+					,{ colSpan: 2, rowSpan: 2, text: 'Both:\nrowSpan and colSpan\ncan be defined at the same time' }
+					,''
+				],
+				[
+					'Sample value 1'
+					,''
+					,''
+				],
+				
+			]
+		}
+	}
+	
+	{
+		 style: 'tableExample'
+		,color: '#444'
+		,table: {
+			 widths: array_widths
+			 //widths: [ '*', 'auto', 100, '*' ]
+			,headerRows: 1
+			//,keepWithHeaderRows: 1
+			,body: [
+				 array_header
+				,[
+					{
+						rowSpan: 3
+						,text: 'teste'
+					}
+					,{
+						rowSpan: 3
+						,text: 'teste'
+					}
+					,colData('a', 'tableRow', 'center')
+					,colData('a', 'tableRow', 'center')
+					,colData('a', 'tableRow', 'center')
+					,colData('a', 'tableRow', 'center')
+					,colData('a', 'tableRow', 'center')
+					,colData('a', 'tableRow', 'center')
+				]
+				
+				,[
+					''
+					,''
+					,colData('f', 'tableRow', 'center')
+					,colData('g', 'tableRow', 'center')
+					,colData('h', 'tableRow', 'center')
+					,colData('y', 'tableRow', 'center')
+					,colData('a', 'tableRow', 'center')
+					,colData('d', 'tableRow', 'center')
+				]
+				,[
+					''
+					,''
+					,colData('f', 'tableRow', 'center')
+					,colData('g', 'tableRow', 'center')
+					,colData('h', 'tableRow', 'center')
+					,colData('y', 'tableRow', 'center')
+					,colData('a', 'tableRow', 'center')
+					,colData('d', 'tableRow', 'center')
+				]
+				,[
+					''
+					,''
+					,colData('f', 'tableRow', 'center')
+					,colData('g', 'tableRow', 'center')
+					,colData('h', 'tableRow', 'center')
+					,colData('y', 'tableRow', 'center')
+					,colData('a', 'tableRow', 'center')
+					,colData('d', 'tableRow', 'center')
+				]
+			]
+		}
+	}
+	*/
+/*
+		require(['rqjs/config'], function(){
+
+		}); //require
+*/
+
+	</script>
+
+	<script src='require.js'></script>
+	<script src='main-print.js'></script>
 </body>
 </html>
 <!--
@@ -49,377 +275,4 @@
 		</tr>
 	</table>
 -->
-	<table class="table table-hover data-table table-row-link" width="100%">
-		<thead>
-			<tr>
-				<th>Descrição</th>
-				<th>Valor Total</th>
-				<th>Mês 1</th><th>Mês 2</th><th>Mês 3</th><th>Mês 4</th><th>Mês 5</th><th>Mês 6</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr><td rowspan="3">Fase limpeza</td><td rowspan="3">R$ 18.188,17</td><td>9.00</td><td>14.00</td><td>12.00</td><td>14.00</td><td>9.00</td><td>41.00</td></tr><tr><td>R$ 1.636,93</td><td>R$ 2.546,34</td><td>R$ 2.182,58</td><td>R$ 2.546,34</td><td>R$ 1.636,93</td><td>R$ 7.457,14</td></tr><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td rowspan="3">CAMINHÃO PARA EQUIPAMENTO DE LIMPEZA A SUCÇÃO COM CAMINHÃO TRUCADO DE PESO BRUTO TOTAL</td><td rowspan="3">R$ 18,17</td><td>9.00</td><td>14.00</td><td>12.00</td><td>14.00</td><td>9.00</td><td>41.00</td></tr><tr><td>R$ 1,63</td><td>R$ 2,54</td><td>R$ 2,18</td><td>R$ 2,54</td><td>R$ 1,63</td><td>R$ 7,44</td></tr><tr><td>0,09</td><td>0,14</td><td>0,12</td><td>0,14</td><td>0,09</td><td>0,41</td></tr><tr><td rowspan="3">CAMINHÃO PARA EQUIPAMENTO DE LIMPEZA A SUCÇÃO COM CAMINHÃO TRUCADO DE PESO BRUTO TOTAL</td><td rowspan="3">R$ 18.170,00</td><td>9.00</td><td>14.00</td><td>12.00</td><td>14.00</td><td>9.00</td><td>41.00</td></tr><tr><td>R$ 1.635,30</td><td>R$ 2.543,80</td><td>R$ 2.180,40</td><td>R$ 2.543,80</td><td>R$ 1.635,30</td><td>R$ 7.449,70</td></tr><tr><td>90,00</td><td>140,00</td><td>120,00</td><td>140,00</td><td>90,00</td><td>410,00</td></tr><tr><td rowspan="3">Fase manunteção</td><td rowspan="3">R$ 1.817.000,00</td><td>9.00</td><td>14.00</td><td>12.00</td><td>14.00</td><td>9.00</td><td>41.00</td></tr><tr><td>R$ 163.530,00</td><td>R$ 254.380,03</td><td>R$ 218.040,00</td><td>R$ 254.380,03</td><td>R$ 163.530,00</td><td>R$ 744.970,00</td></tr><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td rowspan="3">CAMINHÃO PARA EQUIPAMENTO DE LIMPEZA A SUCÇÃO COM CAMINHÃO TRUCADO DE PESO BRUTO TOTAL</td><td rowspan="3">R$ 1.817.000,00</td><td>9.00</td><td>14.00</td><td>12.00</td><td>14.00</td><td>9.00</td><td>41.00</td></tr><tr><td>R$ 163.530,00</td><td>R$ 254.380,03</td><td>R$ 218.040,00</td><td>R$ 254.380,03</td><td>R$ 163.530,00</td><td>R$ 744.970,00</td></tr><tr><td>9000,00</td><td>14000,02</td><td>12000,00</td><td>14000,02</td><td>9000,00</td><td>41000,00</td></tr><tr><td rowspan="3">Sub fase limpeza</td><td rowspan="3">R$ 0,00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>25.00</td></tr><tr><td>R$ 0,00</td><td>R$ 0,00</td><td>R$ 0,00</td><td>R$ 0,00</td><td>R$ 0,00</td><td>R$ 0,00</td></tr><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-		</tbody>
-	</table>
-	<script src='require.js'></script>
-	<script type="text/javascript">
-		/*
-
-		*/
-		var require_baseUrl_override = 'pdfmake-master/';
-
-		require.config({
-			 baseUrl: require_baseUrl_override
-			,paths: {
-				  libs: 'libs'
-				 ,filesaver: 'libs/filesaver'
-				 ,build: 'build'
-			}
-		});
-		
-			var libRequested = [
-				 'libs/jquery-1.7.1.min'
-				//,'build/pdfmake.min'
-				,'../pdfmake.min'
-				,'build/vfs_fonts'
-				,'filesaver/filesaver'
-				,'libs/parser-component'
-			];
-			
-			require(libRequested, function() {
-				//console.log(localStorage);
-				//console.log(pdfMake);
-				
-				var tabela = $('.table');
-				var array_header = [];
-				
-				$(tabela).find('th').each(function(i, e) {
-					/*
-					var mapa = {};
-					mapa['text'] = $(e).text();
-					mapa['style'] = 'tableHeader'
-					mapa['alignment'] = 'center'
-					*/
-					var objeto = colData($(e).text(), 'tableHeader', 'center');
-					objeto['fontSize'] = 14;
-					array_header.push(objeto);
-				});
-				
-				var dados_tabela = [];
-				dados_tabela.push(array_header);
-				//console.log($(tabela).find('tr'));
-				//console.log($(tabela).find('tr').slice(1));
 	
-				// usar a funcao slice para recuperar
-				// um subconjunto do conjutno de linhas da tabela
-				// a partir da linha '1', pois a linha '0' contem
-				// o header da tabela
-				$(tabela).find('tr').slice(1).each(function(i, tr) {
-					var td = $(tr).find('td');
-					//console.log(td, i);
-					var linha = [];
-					/*
-						Se o indice for divisivel por 3
-						significa que eh uma linha que representa
-						uma fase, subfase ou item
-					*/
-					if(i % 3 == 0) {
-						/*
-							as duas primeras colunas da linha que representa uma
-							fase, subfase ou item, possui 
-						*/
-						$(td).slice(0, 2).each(function(i, e) {
-							//console.log($(e))
-							var text = $(e).text()
-							if(i == 0) {
-								text = text.substring(0, 20);
-								text += '...';
-							}
-							var objeto = colData(text, 'tableRow', 'center');
-							objeto['rowSpan'] = 3;
-							objeto['fontSize'] = 12;
-							linha.push(objeto);
-						});
-						
-						$(td).slice(2).each(function(i, e) {
-							var text = $(e).text();
-							var objeto = colData(text, 'tableRow', 'center');
-							objeto['fontSize'] = 12;
-							linha.push(objeto);
-						});
-					} else {
-						linha[0] = linha[1] = '';
-						$(td).each(function(i, e) {
-							var text = $(e).text();
-							var objeto = colData(text, 'tableRow', 'center');
-							objeto['fontSize'] = 12;
-							linha.push(objeto);
-						});
-					}
-					//console.log(linha);
-					//console.log(new Array(linha), [linha]);
-					//dados_tabela.push([linha]);
-					dados_tabela.push(linha);
-				});
-
-				console.log(dados_tabela);
-
-				//console.log(ParseHtml);
-				//console.log(array_header);
-				//console.log(array_header.slice(0, 1));
-				
-				/*
-					https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/fill
-					http://stackoverflow.com/questions/4049847/initializing-an-array-with-a-single-value
-				
-				//var array_widths = new Array(array_header.length).fill('*');
-				
-				var array_widths = Array.apply(null, {length: array_header.length}); //.map( function(value) {return value} );
-				array_widths = array_widths.map(function(value) {
-					return value === undefined ? '*' : value;
-				});
-				*/
-				var fake = [
-					[
-						 {text: 'Header with Colspan = 2', style: 'tableHeader', colSpan: 2, alignment: 'center' }
-						,{}
-						,{ text: 'Header 3', style: 'tableHeader', alignment: 'center' }
-					],
-					[
-						 { text: 'Header 1', style: 'tableHeader', alignment: 'center' }
-						,{ text: 'Header 2', style: 'tableHeader', alignment: 'center' }
-						,{ text: 'Header 3', style: 'tableHeader', alignment: 'center' }
-					],
-					[ 
-						'Sample value 1'
-						,'Sample value 2'
-						,'Sample value 3'
-					],
-					[
-						{
-							 rowSpan: 3
-							,text: 'rowSpan set to 3\nLorem ipsum dolor sit amet, consectetur' + 
-							'adipisicing elit, sed do eiusmod tempor' 
-						}
-						, 'Sample value 2', 'Sample value 3'
-					],
-					[
-						''
-						,'Sample value 2'
-						,'Sample value 3'
-					],
-					[
-						//'Sample value 1'
-						''
-						,'Sample value 2'
-						,'Sample value 3'
-					],
-
-					[
-						'Sample value 1'
-						,{ colSpan: 2, rowSpan: 2, text: 'Both:\nrowSpan and colSpan\ncan be defined at the same time' }
-						,''
-					],
-					[
-						'Sample value 1'
-						,''
-						,''
-					],
-					
-				];
-				//console.log(fake);
-			
-				
-				var array_widths = new Array(array_header.length);
-				var idx = 0;
-				while(idx < array_widths.length) {
-					array_widths[idx++] = '*';
-				}
-				
-				var data = {
-					 pageSize: 'A4'
-					,pageOrientation: 'landscape'
-					,content: [
-						/*
-						{
-						  table: {
-							// headers are automatically repeated if the table spans over multiple pages
-							// you can declare how many rows should be treated as headers
-							headerRows: 1,
-							// essa merda de vetor diz quais as larguras
-							//widths: ['*', 'auto', 100, '*'],
-
-							body: [
-							  [ 'First', 'Second', 'Third', 'The last one' ],
-							  [ 'Value 1', 'Value 2', 'Value 3', 'Value 4' ],
-							  [ { text: 'Bold value', bold: true }, 'Val 2', 'Val 3', 'Val 4' ]
-							]
-						  }
-						}
-					
-						//{text: 'Column/row spans', style: 'subheader' }
-						//,'Each cell-element can set a rowSpan or colSpan'
-						
-						,{
-							style: 'tableExample',
-							color: '#444',
-							table: {
-								widths: [360, 'auto', 'auto'],
-								headerRows: 2,
-								// keepWithHeaderRows: 1,
-								body: [
-									[
-										 {text: 'Header with Colspan = 2', style: 'tableHeader', colSpan: 2, alignment: 'center' }
-										,{}
-										,{ text: 'Header 3', style: 'tableHeader', alignment: 'center' }
-									],
-									[
-										 { text: 'Header 1', style: 'tableHeader', alignment: 'center' }
-										,{ text: 'Header 2', style: 'tableHeader', alignment: 'center' }
-										,{ text: 'Header 3', style: 'tableHeader', alignment: 'center' }
-									],
-									[ 
-										'Sample value 1'
-										,'Sample value 2'
-										,'Sample value 3'
-									],
-									[
-										{
-											 rowSpan: 3
-											,text: 'rowSpan set to 3\nLorem ipsum dolor sit amet, consectetur' + 
-											'adipisicing elit, sed do eiusmod tempor' 
-										}
-										, 'Sample value 2', 'Sample value 3'
-									],
-									[
-										''
-										,'Sample value 2'
-										,'Sample value 3'
-									],
-									[
-										//'Sample value 1'
-										''
-										,'Sample value 2'
-										,'Sample value 3'
-									],
-					
-									[
-										'Sample value 1'
-										,{ colSpan: 2, rowSpan: 2, text: 'Both:\nrowSpan and colSpan\ncan be defined at the same time' }
-										,''
-									],
-									[
-										'Sample value 1'
-										,''
-										,''
-									],
-									
-								]
-							}
-						}
-						
-						{
-							 style: 'tableExample'
-							,color: '#444'
-							,table: {
-								 widths: array_widths
-								 //widths: [ '*', 'auto', 100, '*' ]
-								,headerRows: 1
-								//,keepWithHeaderRows: 1
-								,body: [
-									 array_header
-									,[
-										{
-											rowSpan: 3
-											,text: 'teste'
-										}
-										,{
-											rowSpan: 3
-											,text: 'teste'
-										}
-										,colData('a', 'tableRow', 'center')
-										,colData('a', 'tableRow', 'center')
-										,colData('a', 'tableRow', 'center')
-										,colData('a', 'tableRow', 'center')
-										,colData('a', 'tableRow', 'center')
-										,colData('a', 'tableRow', 'center')
-									]
-									
-									,[
-										''
-										,''
-										,colData('f', 'tableRow', 'center')
-										,colData('g', 'tableRow', 'center')
-										,colData('h', 'tableRow', 'center')
-										,colData('y', 'tableRow', 'center')
-										,colData('a', 'tableRow', 'center')
-										,colData('d', 'tableRow', 'center')
-									]
-									,[
-										''
-										,''
-										,colData('f', 'tableRow', 'center')
-										,colData('g', 'tableRow', 'center')
-										,colData('h', 'tableRow', 'center')
-										,colData('y', 'tableRow', 'center')
-										,colData('a', 'tableRow', 'center')
-										,colData('d', 'tableRow', 'center')
-									]
-									,[
-										''
-										,''
-										,colData('f', 'tableRow', 'center')
-										,colData('g', 'tableRow', 'center')
-										,colData('h', 'tableRow', 'center')
-										,colData('y', 'tableRow', 'center')
-										,colData('a', 'tableRow', 'center')
-										,colData('d', 'tableRow', 'center')
-									]
-								]
-							}
-						}
-						*/
-						{
-							 style: 'tableExample'
-							,color: '#444'
-							,table: {
-								 widths: array_widths
-								,headerRows: 1
-								//,keepWithHeaderRows: 1
-								,body: dados_tabela//dados_tabela.slice(0, 2)
-							}
-						}
-						/*
-						,{
-							 style: 'tableExample'
-							,color: '#444'
-							,table: {
-								 widths: [360, 'auto', 'auto']
-								,headerRows: 2
-								,keepWithHeaderRows: 1
-								,body: fake
-							}
-						}
-						*/
-					]
-				};
-				//pdfMake.createPdf(data).open()
-				pdfMake.createPdf(data).download();
-			}); //require
-			
-			var colData = function(text, style, align) {
-				var object = {
-					 text: text
-					,style: style
-					, alignment: align
-				};
-				
-				return object;
-			};
-/*
-		require(['rqjs/config'], function(){
-
-		}); //require
-*/
-
-	</script>
