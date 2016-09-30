@@ -110,6 +110,16 @@ define(['../pdfmake.min'], function() {
 					,body: dados_tabela//dados_tabela.slice(0, 2)
 				}
 			}
+			,{
+				 style: 'tableExample'
+				,color: '#444'
+				,table: {
+					 widths: array_widths
+					,headerRows: 1
+					//,keepWithHeaderRows: 1
+					,body: dados_tabela//dados_tabela.slice(0, 2)
+				}
+			}
 		]
 	};
 	//pdfMake.createPdf(data).open()
