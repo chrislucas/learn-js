@@ -1,0 +1,1 @@
+// https://developer.mozilla.org/en/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
